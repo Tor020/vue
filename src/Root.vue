@@ -1,41 +1,22 @@
 <template lang='pug'>
-div
-  .card.m-2(style='width: 40rem;')
-    .card-body
-      h5.card-title(v-text='thecardtitle')
-      button.btn.btn-info(@click='sendMessage') Send Child A Message
-      child-card(:parentmessage='parentmessage', :ok='ok', @finished='finished')
+.d-flex.justify-content-center
+  slots-example
+    h1(slot='title') {{ slotMarkup }}
+    h5(slot='subtitle') The Sub Title Passed In
+    h3 This is some body text son.
 
 </template>
  
 <script>
-    import ChildCard from './components/ChildCard.vue';
+    import SlotsExample from './ASlotsExample.vue';
  
     export default {
-        components: {ChildCard},
+        components: {SlotsExample},
  
         data() {
             return {
-                thecardtitle: 'Parent Component!',
-                parentmessage: ''
-            }
-        },
- 
-        methods: {
-            sendMessage() {
-                this.parentmessage = '<b>Message From Parent:</b> Do Your Homework'
-            },
- 
-            finished() {
-                this.parentmessage = ''
-            },
- 
-            ok() {
-                this.finished()
+                slotMarkup: 'THE REAL DEAL'
             }
         }
     }
 </script>
- 
-<style>
-</style>

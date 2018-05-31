@@ -8,7 +8,7 @@
 </template>
  
 <script>
-    import SlotsExample from './SlotsExample.vue';
+    import SlotsExample from './ASlotsExample.vue';
  
     export default {
         components: {SlotsExample},

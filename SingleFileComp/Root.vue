@@ -14,7 +14,7 @@
 
 
 <script>
-import CardImport from './CardImport';
+import CardImport from './ACardImport';
 
 export default {
 

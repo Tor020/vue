@@ -9,7 +9,7 @@ div
 </template>
  
 <script>
-    import ChildCard from './ChildCard.vue';
+    import ChildCard from './AChildCard.vue';
  
     export default {
         components: {ChildCard},
