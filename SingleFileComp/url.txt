@@ -1,0 +1,1 @@
+https://vegibit.com/single-file-components-in-vuejs/
