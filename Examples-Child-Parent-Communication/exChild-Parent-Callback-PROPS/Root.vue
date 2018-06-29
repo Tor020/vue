@@ -7,8 +7,9 @@ div
       child-card(:parentmessage='parentmessage', :ok='ok', @finished='finished')
 
 </template>
- 
+  
 <script>
+// callback example
    import ChildCard from './ChildCard.vue';
  
     export default {

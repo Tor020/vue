@@ -9,7 +9,7 @@ div
 </template>
  
 <script>
-    import ChildCard from './AChildCard.vue';
+   import ChildCard from './ChildCard.vue';
  
     export default {
         components: {ChildCard},
@@ -28,6 +28,10 @@ div
  
             finished() {
                 this.parentmessage = ''
+            },
+ 
+            ok() {
+                this.finished()
             }
         }
     }

@@ -1,0 +1,1 @@
+https://vegibit.com/vue-sibling-component-communication/

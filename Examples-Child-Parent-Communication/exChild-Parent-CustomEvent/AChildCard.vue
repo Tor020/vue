@@ -6,10 +6,11 @@ div
       p.card-text(v-html='thecardbody')
       .card-text.alert.alert-warning(v-if='parentmessage', v-html='parentmessage')
       button.btn.btn-success(v-if='parentmessage', @click='ok') Ok
-
+                            // 
 </template>
  
 <script>
+// customevent example
     export default {
         props: ["parentmessage"],
  
@@ -22,14 +23,17 @@ div
  
         methods: {
             ok() {
-                this.$emit('finished')
+                this.$emit('finished') 
+                    // this is the custom event name listened for on parent 
             }
         }
     };
+
+
+    
 </script>
 
-</script>
- 
+
 <style>
  
 </style>
