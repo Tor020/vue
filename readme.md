@@ -1,20 +1,56 @@
+# Concepts
 
-[Link to fleshed out Vue Repo](https://github.com/Tor020/Webpack3-Cli-Vue) 
 
-[Link to empty Vue Repo](https://github.com/Tor020/Empty-Vue)
+[Sibiling communication pt1 relay / pt2 eventbus](https://vegibit.com/vue-sibling-component-communication/)
+- Custom Events
 
-### Notes
+```js
+messageBrother() {
+//  this.$emit('EVENT-NAME', 'MESSAGE-PASSED-WITH-EVENT')
+    this.$emit('sistersaid', 'Mom said do your homework!')
+}
+```
+---
+- Communication between Siblings
 
-make a  
+## sistercard.vue
+template
+```html
+<button @click="messageBrother" class="btn btn-warning">Message Brother</button>
+            <!--method called  -->
+```
+script
+```js
+//  this.$emit('EVENT-NAME', 'MESSAGE-PASSED-WITH-EVENT')
+    this.$emit('sistersaid', 'Mom said do your homework!')
+```
+## parentcard.vue
+template
+```html
+<sister-card :messagedaughter="messagedaughter" @sistersaid="messageSon($event)"></sister-card>
+                                                <!--1. Message listener for custom event -->
+                                                <!--2. Passes the event to the method on parent to communicate to sibling-->
+```
+script
 
-```Vue.config.js```
+```js
+messageSon(message) {
+    this.messageson = message;
+}
 
-for webpack options list [here](https://github.com/vuejs/vue-cli/tree/dev/docs/config)
-for webpack config example [here](https://github.com/vuejs/vue-cli/blob/dev/docs/guide/webpack.md#simple-configuration)
+data() {
+    return {
+        thecardtitle: 'Parent Component!',
+        messagedaughter: '',
+        messageson: ''
+    }
+}
+```
 
-#### Sass
-- [Sass](https://github.com/vuejs/vue-cli/blob/dev/docs/css.md)
-- [Vue-Docs for Sass](https://github.com/vuejs/vue-cli/blob/dev/docs/css.md)
+----
+
+
+
 
 #### Pug
 - [PrePros Boilerplate HTML](https://github.com/Tor020/preprosboilerplate/tree/master/Dev)
